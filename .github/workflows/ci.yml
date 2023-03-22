@@ -31,6 +31,11 @@ jobs:
           - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/setup-java@v3.10.0
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
       - name: Test integration with asdf
         uses: asdf-vm/actions/plugin-test@v2.1.0
         with:
